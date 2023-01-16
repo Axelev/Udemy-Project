@@ -1,33 +1,47 @@
-"use strict";
+/* Задание на урок:
 
-// let number = 5.4;
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-// const person = '5';
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
 
-// const bool = false;
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
 
-// let und;
+Проверить, чтобы все работало без ошибок в консоли */
 
-// const obj = {
-//     name: 'John',
-//     age: 25,
-//     isMarried: false
-// };
+let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
-// console.log (obj.name);
-// console.log (obj['name']);
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-// let arr = ['plum.png', 'orange.jpeg', 6, 'apple.bmp'];
+let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+let rateTheMovie = prompt('На сколько оцените его?', '');
+personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 
-// alert('Hello');
+lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+rateTheMovie = prompt('На сколько оцените его?', '');
+personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 
-// const result = confirm("Are you stil here?"); 
-// console.log(result);
 
-const answers = [];
 
-answers[0] = prompt('What is your name?', '');
-answers[1] = prompt('What is your surname?', '');
-answers[2] = prompt('What is your age?', '');
+console.log (personalMovieDB.count);
+console.log (personalMovieDB.movies);
 
-document.write(answers);
+
