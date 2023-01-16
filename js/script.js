@@ -21,7 +21,7 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -41,7 +41,6 @@ personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 
 
 
-console.log (personalMovieDB.count);
-console.log (personalMovieDB.movies);
+console.log (personalMovieDB);
 
 
