@@ -27,26 +27,7 @@ const personalMovieDB = {
 
 //////////////* FOR LOOP STYLE  *///////////////////
 
-// for (let i = 0; i < numberOfFilms; i++) {
-//     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
-//     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
-//         i = -1;
-//         continue;
-//     }
-//     let rateTheMovie = prompt('На сколько оцените его?', '');
-//     if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
-//         i = -1;
-//         continue;
-//     }
-//     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
-// }
-
-
-/////////////////* WHILE LOOP STYLE *//////////////////
-
-
-let i = 0;
-while (i < numberOfFilms) {
+for (let i = 0; i < numberOfFilms; i++) {
     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
         i = -1;
@@ -57,11 +38,49 @@ while (i < numberOfFilms) {
         i = -1;
         continue;
     }
-    i++;
     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 }
 
 
+/////////////////* WHILE LOOP STYLE *//////////////////
+
+
+// let i = 0;
+// while (i < numberOfFilms) {
+//     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+//     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
+//         i = -1;
+//         continue;
+//     }
+//     let rateTheMovie = prompt('На сколько оцените его?', '');
+//     if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
+//         i = -1;
+//         continue;
+//     }
+//     i++;
+//     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
+// }
+
+////////////////* DO WHILE LOOP STYLE*//////////////////
+
+
+// let i = 0;
+// do {
+//     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+//     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
+//         i = -1;
+//         continue;
+//     }
+//     let rateTheMovie = prompt('На сколько оцените его?', '');
+//     if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
+//         i = -1;
+//         continue;
+//     }
+//     i++;
+//     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
+// } while (i < numberOfFilms);
+
+//////////////* IF/ELSE FUNCTION FOR AN ANSWER*////////////////
 
 if (personalMovieDB.count < 10 && personalMovieDB.count >= 1) {
     alert('Просмотрено довольно мало фильмов');
