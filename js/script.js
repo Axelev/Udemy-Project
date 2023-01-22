@@ -24,6 +24,9 @@ const personalMovieDB = {
     privat: false
 };
 
+
+//////////////* FOR LOOP STYLE  *///////////////////
+
 for (let i = 0; i < numberOfFilms; i++) {
     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
@@ -37,7 +40,6 @@ for (let i = 0; i < numberOfFilms; i++) {
     }
     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 }
-
 
 
 if (personalMovieDB.count < 10 && personalMovieDB.count >= 1) {
