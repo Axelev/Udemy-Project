@@ -27,15 +27,15 @@ const personalMovieDB = {
 
 //////////////* FOR LOOP STYLE  *///////////////////
 
-for (let i = 0; i < numberOfFilms; i++) {
+for (let i = 0; i < 2; i++) {
     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
     if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
-        i = -1;
+        i--;
         continue;
     }
     let rateTheMovie = prompt('На сколько оцените его?', '');
     if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
-        i = -1;
+        i--;
         continue;
     }
     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
@@ -84,9 +84,9 @@ for (let i = 0; i < numberOfFilms; i++) {
 
 if (personalMovieDB.count < 10 && personalMovieDB.count >= 1) {
     alert('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
     alert('Вы классический зритель');
-} else if (personalMovieDB.count > 30) {
+} else if (personalMovieDB.count >= 30) {
     alert('Вы киноман');
 } else {
     alert('Произошла ошибка');
