@@ -8,7 +8,7 @@
 
 3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
 "Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка" 
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
@@ -26,11 +26,29 @@ const personalMovieDB = {
 
 for (let i = 0; i < numberOfFilms; i++) {
     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+    if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
+        i = -1;
+        continue;
+    }
     let rateTheMovie = prompt('На сколько оцените его?', '');
+    if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
+        i = -1;
+        continue;
+    }
     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 }
 
 
+
+if (personalMovieDB.count < 10 && personalMovieDB.count >= 1) {
+    alert('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+    alert('Вы классический зритель');
+} else if (personalMovieDB.count > 30) {
+    alert('Вы киноман');
+} else {
+    alert('Произошла ошибка');
+}
 
 console.log (personalMovieDB);
 
