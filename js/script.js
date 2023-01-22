@@ -41,6 +41,10 @@ const personalMovieDB = {
 //     personalMovieDB.movies[lastSeenMovie] = rateTheMovie;
 // }
 
+
+/////////////////* WHILE LOOP STYLE *//////////////////
+
+
 let i = 0;
 while (i < numberOfFilms) {
     let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
