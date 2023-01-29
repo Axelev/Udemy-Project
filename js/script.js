@@ -38,12 +38,12 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '');
+        let lastSeenMovie = prompt('Один из последних просмотренных фильмов?', '').trim();
         if (lastSeenMovie === null || lastSeenMovie.length === 0 || lastSeenMovie.length > 50) {
             i--;
             continue;
         }
-        let rateTheMovie = prompt('На сколько оцените его?', '');
+        let rateTheMovie = prompt('На сколько оцените его?', '').trim();
         if (rateTheMovie === null || rateTheMovie.length === 0 || rateTheMovie.length > 50) {
             i--;
             continue;
@@ -109,18 +109,12 @@ function detectPersonalLevel() {
 
 detectPersonalLevel();
 
-// 2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
-// false - выводит в консоль главный объект программы
 
 function showMyDB(hidden) {
     if (!hidden) {
         console.log (personalMovieDB);
     }
 }
-
-// 3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
-// "Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
-// genres
 
 function writeYourGenres() {
     for (let i = 0; i < 3; i++) {
@@ -131,3 +125,4 @@ function writeYourGenres() {
 writeYourGenres ();
 
 showMyDB(personalMovieDB.privat);
+
